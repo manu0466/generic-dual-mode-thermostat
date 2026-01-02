@@ -1,0 +1,79 @@
+{
+    "config": {
+        "step": {
+            "presets": {
+                "title": "Preset temperatura",
+                "data": {
+                    "activity_temp": "Attività",
+                    "away_temp": "Fuori casa",
+                    "comfort_temp": "Confort",
+                    "eco_temp": "Eco",
+                    "home_temp": "Casa",
+                    "sleep_temp": "Sonno"
+                }
+            },
+            "user": {
+                "title": "Crea termostato generico",
+                "description": "Crea un'entità termostato che controlla la temperatura attraverso un interruttore e un sensore.",
+                "data": {
+                    "cold_tolerance": "Tolleranza al freddo",
+                    "heater": "Interruttore attuatore",
+                    "hot_tolerance": "Tolleranza al caldo",
+                    "max_temp": "Temperatura massima",
+                    "min_cycle_duration": "Durata minima del ciclo",
+                    "min_temp": "Temperatura minima",
+                    "name": "Nome",
+                    "target_sensor": "Sensore di temperatura"
+                },
+                "data_description": {
+                    "cold_tolerance": "Differenza minima tra la temperatura rilevata dal sensore di temperatura e la temperatura impostata che deve variare prima dell'accensione. Ad esempio, se la temperatura impostata è 25 e la tolleranza al freddo è 0,5, il riscaldamento si accenderà quando il sensore scende sotto i 24,5.",
+                    "heater": "Entità interruttore usata per raffreddare o riscaldare a seconda della modalità.",
+                    "hot_tolerance": "Differenza minima tra la temperatura rilevata dal sensore di temperatura e la temperatura impostata che deve variare prima dello spegnimento. Ad esempio, se la temperatura impostata è 25 e la tolleranza al caldo è 0,5, il riscaldamento si spegnerà quando il sensore raggiunge o supera 25,5.",
+                    "min_cycle_duration": "Imposta il tempo minimo che l'interruttore specificato deve mantenere nello stato corrente prima di essere spento o acceso.",
+                    "target_sensor": "Sensore di temperatura che riporta la temperatura corrente."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "cold_tolerance": "Tolleranza al freddo",
+                    "heater": "Interruttore attuatore",
+                    "hot_tolerance": "Tolleranza al caldo",
+                    "max_temp": "Temperatura massima",
+                    "min_cycle_duration": "Durata minima del ciclo",
+                    "min_temp": "Temperatura minima",
+                    "name": "Nome",
+                    "target_sensor": "Sensore di temperatura"
+                },
+                "data_description": {
+                    "cold_tolerance": "Differenza minima tra la temperatura rilevata dal sensore di temperatura e la temperatura impostata che deve variare prima dell'accensione. Ad esempio, se la temperatura impostata è 25 e la tolleranza al freddo è 0,5, il riscaldamento si accenderà quando il sensore scende sotto i 24,5.",
+                    "heater": "Entità interruttore usata per raffreddare o riscaldare a seconda della modalità.",
+                    "hot_tolerance": "Differenza minima tra la temperatura rilevata dal sensore di temperatura e la temperatura impostata che deve variare prima dello spegnimento. Ad esempio, se la temperatura impostata è 25 e la tolleranza al caldo è 0,5, il riscaldamento si spegnerà quando il sensore raggiunge o supera 25,5.",
+                    "min_cycle_duration": "Imposta il tempo minimo che l'interruttore specificato deve mantenere nello stato corrente prima di essere spento o acceso.",
+                    "target_sensor": "Sensore di temperatura che riporta la temperatura corrente."
+                }
+            },
+            "presets": {
+                "title": "Preset temperatura",
+                "data": {
+                    "activity_temp": "Attività",
+                    "away_temp": "Fuori casa",
+                    "comfort_temp": "Confort",
+                    "eco_temp": "Eco",
+                    "home_temp": "Casa",
+                    "sleep_temp": "Sonno"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "Ricarica i termostati generici dalla configurazione YAML.",
+            "name": "Ricarica"
+        }
+    },
+    "title": "Termostato generico a doppia modalità"
+}

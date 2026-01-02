@@ -10,11 +10,10 @@ from homeassistant.components.climate import (
 )
 from homeassistant.const import Platform
 
-DOMAIN = "generic_thermostat"
+DOMAIN = "generic_dual_mode_thermostat"
 
 PLATFORMS = [Platform.CLIMATE]
 
-CONF_AC_MODE = "ac_mode"
 CONF_COLD_TOLERANCE = "cold_tolerance"
 CONF_HEATER = "heater"
 CONF_HOT_TOLERANCE = "hot_tolerance"

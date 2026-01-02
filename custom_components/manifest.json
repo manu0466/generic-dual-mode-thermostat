@@ -1,11 +1,16 @@
 {
-  "domain": "generic_thermostat",
-  "name": "Generic Thermostat",
-  "codeowners": [],
-  "config_flow": true,
-  "dependencies": ["sensor", "switch"],
-  "documentation": "https://www.home-assistant.io/integrations/generic_thermostat",
-  "integration_type": "helper",
-  "iot_class": "local_polling",
-  "quality_scale": "internal"
+    "domain": "generic_dual_mode_thermostat",
+    "name": "Generic Dual Mode Thermostat",
+    "version": "0.0.1",
+    "codeowners": [
+        "@manu0466"
+    ],
+    "config_flow": true,
+    "dependencies": [
+        "sensor",
+        "switch"
+    ],
+    "iot_class": "local_polling",
+    "integration_type": "helper",
+    "requirements": []
 }

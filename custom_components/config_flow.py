@@ -17,7 +17,6 @@ from homeassistant.helpers.schema_config_entry_flow import (
 )
 
 from .const import (
-    CONF_AC_MODE,
     CONF_COLD_TOLERANCE,
     CONF_HEATER,
     CONF_HOT_TOLERANCE,
@@ -31,9 +30,6 @@ from .const import (
 )
 
 OPTIONS_SCHEMA = {
-    vol.Required(CONF_AC_MODE): selector.BooleanSelector(
-        selector.BooleanSelectorConfig(),
-    ),
     vol.Required(CONF_SENSOR): selector.EntitySelector(
         selector.EntitySelectorConfig(
             domain=SENSOR_DOMAIN, device_class=SensorDeviceClass.TEMPERATURE
