@@ -1,0 +1,13 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    ports:
+      - 8123:8123
+    environment:
+      TZ: Europe/Rome
+    volumes:
+      - ./docker/config:/config
+      - ./custom_components/generic_dual_mode_thermostat:/config/custom_components/generic_dual_mode_thermostat
+      - /etc/localtime:/etc/localtime:ro

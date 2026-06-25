@@ -1,0 +1,47 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+input_boolean:
+  test_switch_helper:
+    name: Test Switch Helper
+    initial: false
+
+input_number:
+  test_temperature_value:
+    name: Test Temperature Value
+    min: 0
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 21.0
+
+template:
+  - switch:
+      - name: "Test Switch"
+        unique_id: test_switch
+        state: "{{ is_state('input_boolean.test_switch_helper', 'on') }}"
+        turn_on:
+          action: input_boolean.turn_on
+          target:
+            entity_id: input_boolean.test_switch_helper
+        turn_off:
+          action: input_boolean.turn_off
+          target:
+            entity_id: input_boolean.test_switch_helper
+
+    sensor:
+      - name: "Test Temperature"
+        unique_id: test_temperature
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state_class: measurement
+        state: "{{ states('input_number.test_temperature_value') | float(0) }}"

@@ -9,3 +9,8 @@ __pycache__
 # Home Assistant configuration
 config/*
 !config/configuration.yaml
+
+# Docker
+docker/config/**
+# Keep home assistant configuration
+!docker/config/configuration.yaml
